@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: Inter, sans-serif;
+}
+
+.app {
+	max-height: 100vh;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.box {
+	display: flex;
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	width: 100vw;
+}
+
+.formComponent,
+.markdownWorkFlow {
+	max-height: 100%;
+	flex-basis: 0.5;
+}
+
+.form {
+	overflow: scroll;
+	max-height: 100%;
+}
+
+.noScrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.noScrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.tab {
+	@apply flex items-center gap-2 px-3 py-2 cursor-pointer transition-all font-medium rounded-lg;
+
+	&:hover {
+		@apply bg-lightBlue/10;
+	}
+
+	.icon {
+		@apply transition-all;
+	}
+
+	.down {
+		@apply rotate-90;
+	}
+}
+
+.active {
+	@apply bg-lightBlue/20 text-darkBlue font-medium;
+}
+
+.label {
+	@apply font-medium;
+}
+.text_input {
+	@apply flex flex-col gap-2 p-4 pb-0;
+
+	input,
+	textarea {
+		@apply transition-all p-2 px-4 outline-none border border-darkBlue/20 rounded-md font-medium focus:shadow-onHover bg-bluishWhite;
+
+		&::placeholder {
+			@apply text-darkBlue/50;
+		}
+	}
+}
+
+.socials {
+}
+
+.inputBox {
+	@apply flex items-center bg-white transition-all p-2 px-4 outline-none border border-darkBlue/20 rounded-md font-medium focus:shadow-onHover w-full;
+
+	.label {
+		font-weight: 400 !important;
+	}
+	input {
+		@apply p-0 border-none focus:shadow-none bg-transparent max-w-max;
+	}
+}
+
+.header {
+	font-size: 1.75rem;
+	font-weight: 700;
+}
+
+.tagline {
+	font-size: 1.5rem;
+}
+
+.link {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
